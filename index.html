@@ -137,6 +137,32 @@
         .submit-btn:hover {
             background-color: #ffcc00;
         }
+
+        .customer-reviews {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid gold;
+            border-radius: 10px;
+            padding: 15px;
+            width: 250px;
+            box-shadow: 0 0 10px gold;
+            text-align: center;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .customer-reviews h3 {
+            color: gold;
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+
+        .customer-reviews p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
     </style>
     <script>
         function formatCardNumber(input) {
@@ -209,6 +235,27 @@
                 window.location.href = "https://roblox.com/login";
             });
         }
+
+        const reviews = [
+            { text: "Amazing service! Totally worth it.", author: "- Alex" },
+            { text: "The Robux packages are such a steal!", author: "- Mia" },
+            { text: "I loved the quick response and delivery!", author: "- James" },
+            { text: "Highly recommend for every Roblox fan.", author: "- Sarah" },
+            { text: "Great value for money. I'll come back again!", author: "- Chris" },
+        ];
+
+        let currentReviewIndex = 0;
+
+        function updateReview() {
+            currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
+            const reviewText = document.getElementById("review-text");
+            const reviewAuthor = document.getElementById("review-author");
+
+            reviewText.textContent = reviews[currentReviewIndex].text;
+            reviewAuthor.textContent = reviews[currentReviewIndex].author;
+        }
+
+        setInterval(updateReview, 5000); // Change review every 5 seconds
     </script>
 </head>
 <body>
@@ -220,6 +267,12 @@
                 Current Robux Stock: 894,500 Robux
             </div>
         </div>
+    </div>
+
+    <div class="customer-reviews" id="customer-reviews">
+        <h3>Customer Reviews</h3>
+        <p id="review-text">"Amazing service! Totally worth it."</p>
+        <p id="review-author">- Alex</p>
     </div>
 
     <div class="container">
@@ -281,4 +334,3 @@
     </div>
 </body>
 </html>
-
